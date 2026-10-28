@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default: Original Brown Matte Theme */
+  --bg-app: #FAF6F0;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-secondary: #F3EBE1;
+  --bg-banner: #E3D7C7;
+  --border-subtle: #E8DED2;
+  --border-strong: #C8B7A4;
+  --text-main: #2E1E12;
+  --text-muted: #6E5A49;
+  --brand-brown: #734C29;
+  --brand-brown-hover: #5C3A1E;
+  --brand-brown-light: #EFE7DC;
+  --brand-text: #FFFFFF;
+  --focus-ring: #734C29;
+  --emergency-red: #C53030;
+  --emergency-red-hover: #A82525;
+  --warning-amber: #B45309;
+  --warning-bg: #FEF3C7;
+  --success-green: #15803D;
+  --success-bg: #DCFCE7;
+  --demo-pill-bg: #FFF8E7;
+  --demo-pill-border: #F0DC9C;
+  --demo-pill-text: #855700;
+}
+
+/* 1. Original Brown Matte Theme */
+html.theme-original {
+  --bg-app: #FAF6F0;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-secondary: #F3EBE1;
+  --bg-banner: #E3D7C7;
+  --border-subtle: #E8DED2;
+  --border-strong: #C8B7A4;
+  --text-main: #2E1E12;
+  --text-muted: #6E5A49;
+  --brand-brown: #734C29;
+  --brand-brown-hover: #5C3A1E;
+  --brand-brown-light: #EFE7DC;
+  --brand-text: #FFFFFF;
+  --focus-ring: #734C29;
+}
+
+/* 2. High-Contrast Light Theme */
+html.theme-hc-light {
+  --bg-app: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-secondary: #F0F0F0;
+  --bg-banner: #E6E6E6;
+  --border-subtle: #000000;
+  --border-strong: #000000;
+  --text-main: #000000;
+  --text-muted: #222222;
+  --brand-brown: #002B80;
+  --brand-brown-hover: #001A4D;
+  --brand-brown-light: #E6EEFA;
+  --brand-text: #FFFFFF;
+  --focus-ring: #000000;
+  --emergency-red: #A30000;
+  --emergency-red-hover: #7A0000;
+  --warning-amber: #6B3A00;
+  --warning-bg: #FFF3C4;
+  --success-green: #006622;
+  --success-bg: #D9F5E1;
+  --demo-pill-bg: #FFF9D6;
+  --demo-pill-border: #000000;
+  --demo-pill-text: #000000;
+}
+
+/* 3. High-Contrast Dark Theme */
+html.theme-hc-dark {
+  --bg-app: #0A0A0A;
+  --bg-surface: #141414;
+  --bg-card: #181818;
+  --bg-secondary: #222222;
+  --bg-banner: #2A2A2A;
+  --border-subtle: #444444;
+  --border-strong: #FFD700;
+  --text-main: #FFFFFF;
+  --text-muted: #D0D0D0;
+  --brand-brown: #FFD700;
+  --brand-brown-hover: #FFE247;
+  --brand-brown-light: #2A2500;
+  --brand-text: #000000;
+  --focus-ring: #00E5FF;
+  --emergency-red: #FF4D4D;
+  --emergency-red-hover: #FF7070;
+  --warning-amber: #FFD166;
+  --warning-bg: #332700;
+  --success-green: #00F59B;
+  --success-bg: #003319;
+  --demo-pill-bg: #292400;
+  --demo-pill-border: #FFD700;
+  --demo-pill-text: #FFF8B8;
+}
+
+/* High Contrast Modifier (extra thick borders, high separation) */
+html.hc-mode {
+  --border-subtle: #000000;
+  --border-strong: #000000;
+}
+html.theme-hc-dark.hc-mode {
+  --border-subtle: #FFD700;
+  --border-strong: #FFFFFF;
+}
+
+/* Font Scaling: accessible relative sizing for elderly users */
+html.text-size-sm {
+  font-size: 15px;
+}
+html.text-size-normal {
+  font-size: 17.5px;
+}
+html.text-size-lg {
+  font-size: 20.5px;
+}
+html.text-size-xl {
+  font-size: 24px;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible visible keyboard focus outline */
+*:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-brown);
+}
